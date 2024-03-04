@@ -27,4 +27,4 @@ variables:
 stages:
 - template: ci/packages.yml@configurator
   parameters:
-    skipAllTest
+    skipAllTest: true
