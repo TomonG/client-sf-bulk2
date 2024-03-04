@@ -1,0 +1,30 @@
+resources:
+  repositories:
+  - repository: configurator
+    endpoint: github-connection
+    type: github
+    name: hemfrid/hemfrid-configurator
+    ref: refs/heads/master
+
+trigger:
+  branches:
+    include:
+    - master
+  tags:
+    include:
+    - v*
+
+pr:
+  branches:
+    include:
+    - "*"
+
+pool: $(Pool)
+
+variables:
+- template: 'ci/variables/build.yml@configurator'
+
+stages:
+- template: ci/packages.yml@configurator
+  parameters:
+    skipAllTest

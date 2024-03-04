@@ -78,7 +78,7 @@ export default class BulkAPI {
     let data: string = '';
     const result = await this.getQueryResults(jobId, maxRecords);
     data = result.data;
-    if (result.headers['sforce-locator'] !== 'null') data += await this.iterateThroughResults(result.headers, jobId, maxRecords);
+    if (result.headers['sforce-locator'] !== 'null') data += await this.iterateThroughResults(result.headers as AxiosResponseHeaders, jobId, maxRecords);
     return data;
   }
 

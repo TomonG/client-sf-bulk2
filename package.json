@@ -1,11 +1,11 @@
 {
-  "name": "client-sf-bulk2",
+  "name": "@hemfrid/sf-bulk-api",
   "version": "0.8.0",
   "description": "A client for the Salesforce bulk API V2",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/clemb8/client-sf-bulk2"
+    "url": "https://github.com/hemfrid/client-sf-bulk2"
   },
   "keywords": [
     "salesforce",
@@ -13,19 +13,22 @@
     "salesforce-api"
   ],
   "scripts": {
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run build",
-    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
-    "generate-changelog": "npx github-changes -n ${npm_package_version} --use-commit-body -o clemb8 -r client-sf-bulk2 -b main",
+    "prebuild": "yarn clean",
+    "clean": "rimraf coverage build tmp dist",
+    "lint:types": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "version": "npm run generate-changelog && git add CHANGELOG.md",
-    "postversion": "git push && git push --tags"
+    "release": "./node_modules/.bin/standard-version --no-verify",
+    "release:first": "yarn release --first-release",
+    "release:major": "yarn release --release-as major",
+    "release:minor": "yarn release --release-as minor",
+    "release:patch": "yarn release --release-as patch"
   },
   "author": "clemb8",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.7.9",
+    "rimraf": "^5.0.5",
+    "standard-version": "^9.5.0",
     "tslint": "^6.1.3",
     "typedoc": "^0.23.10",
     "typescript": "^4.7.4"
@@ -34,6 +37,6 @@
     "axios": "^1.6.0"
   },
   "engines": {
-    "node": "17.1"
+    "node": ">17.1"
   }
 }
