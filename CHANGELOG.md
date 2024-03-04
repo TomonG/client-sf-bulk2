@@ -1,4 +1,13 @@
-## Change Log
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 0.8.0 (2024-03-04)
+
+
+### Features
+
+* first changes ([e35cfdc](https://github.com/hemfrid/hemfrid-configurator/commit/e35cfdcdcf3bb4ec433385ddcfcfa590405ee187))
 
 ### 0.8.0 (2023/02/11 17:05 +00:00)
 - [af5c315](https://github.com/clemb8/client-sf-bulk2/commit/af5c315beec3579c3ebe1b9418a0c650bf3391d4) npx githug changes (@clemb8)
