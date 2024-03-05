@@ -1,6 +1,6 @@
 {
   "name": "@hemfrid/sf-bulk-api",
-  "version": "0.8.0",
+  "version": "0.8.2",
   "description": "A client for the Salesforce bulk API V2",
   "main": "dist/index.js",
   "repository": {
